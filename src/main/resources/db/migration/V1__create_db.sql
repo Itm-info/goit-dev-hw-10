@@ -1,11 +1,14 @@
 CREATE TABLE client (
     id IDENTITY PRIMARY KEY,
-    name VARCHAR(200) NOT NULL
+    name VARCHAR(200),
+    CONSTRAINT CK_client_name CHECK (CHAR_LENGTH(name) > 2)
 );
 
 CREATE TABLE planet (
-    id VARCHAR(10) PRIMARY KEY,
-    name VARCHAR(500) NOT NULL
+    id VARCHAR PRIMARY KEY,
+    name VARCHAR(500),
+    CONSTRAINT CK_planet_id CHECK (REGEXP_LIKE(id, '^[A-Z0-9]+$')),
+    CONSTRAINT CK_planet_name CHECK (CHAR_LENGTH(name) > 0)
 );
 
 CREATE TABLE ticket (
