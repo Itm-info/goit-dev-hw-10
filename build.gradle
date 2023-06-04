@@ -46,7 +46,7 @@ dependencies {
 }
 
 flyway {
-    url = 'jdbc:h2:file:./mydb12;TRACE_LEVEL_SYSTEM_OUT=3'
+    url = 'jdbc:h2:file:./mydb14;TRACE_LEVEL_SYSTEM_OUT=3'
     user = ''
     password = ''
 }
