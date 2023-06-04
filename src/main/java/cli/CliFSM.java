@@ -44,9 +44,9 @@ public class CliFSM {
                 case "uc":
                     updateClientCrudService();
                     break;
-//                case "deleteClient":
-//                    deleteClientCrudService();
-//                    break;
+                case "dc":
+                    deleteClientCrudService();
+                    break;
 //                case "createPlanet":
 //                    createPlanetCrudService();
 //                    break;
@@ -70,12 +70,8 @@ public class CliFSM {
     }
     public void readClientCrudService() { state.readClientCrudService(); }
     public void readByNameClientCrudService() { state.readByNameClientCrudService(); }
-    public void updateClientCrudService() {
-        state.updateClientCrudService();
-    }
-//    public void deleteClientCrudService() {
-//        state.deleteClientCrudService();
-//    }
+    public void updateClientCrudService() { state.updateClientCrudService(); }
+    public void deleteClientCrudService() { state.deleteClientCrudService(); }
 //    public void createPlanetCrudService() {
 //        state.createPlanetCrudService();
 //    }
@@ -88,7 +84,6 @@ public class CliFSM {
 //    public void deletePlanetCrudService() {
 //        state.deletePlanetCrudService();
 //    }
-
     public void unknownCommand(String cmd) {
         state.unknownCommand(cmd);
     }

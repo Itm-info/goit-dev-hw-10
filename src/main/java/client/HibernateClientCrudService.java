@@ -46,6 +46,18 @@ public class HibernateClientCrudService implements IClientCrudService {
                 existing.setName("Agent Smith");
                 session.persist(existing);
             transaction.commit();
+        }
+    }
+    @Override
+    public void delete(long id) throws SQLException {
+        try (Session session = HibernateUtil.getInstance().getSessionFactory().openSession()) {
+            Transaction transaction = session.beginTransaction();
+                Query query = session.createQuery(
+                        "delete from Client where id= :id"
+                );
+                query.setParameter("id", id);
+                System.out.println(query.executeUpdate());
+            transaction.commit();
             session.close();
         }
     }

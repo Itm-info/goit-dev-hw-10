@@ -18,7 +18,7 @@ public class createClientCrud extends CliState {
         try {
             IClientCrudService ClientCrudService = new HibernateClientCrudService();
 
-            System.out.println("Enter client name:");
+            System.out.println("Creation. Enter client name:");
 
             String clientName = fsm.getScanner().nextLine();
 

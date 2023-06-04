@@ -16,7 +16,7 @@ public class readClientCrud extends CliState {
         try {
             IClientCrudService ClientCrudService = new HibernateClientCrudService();
 
-            System.out.println("Enter client Id:");
+            System.out.println("Reading. Enter client Id:");
             String sid = fsm.getScanner().nextLine();
             long id = Long.parseLong(sid);
 

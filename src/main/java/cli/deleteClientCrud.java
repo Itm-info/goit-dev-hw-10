@@ -6,8 +6,8 @@ import client.IClientCrudService;
 
 import java.sql.SQLException;
 
-public class updateClientCrud extends CliState {
-    public updateClientCrud(CliFSM fsm) {
+public class deleteClientCrud extends CliState {
+    public deleteClientCrud(CliFSM fsm) {
         super(fsm);
     }
 
@@ -16,7 +16,7 @@ public class updateClientCrud extends CliState {
         try {
             IClientCrudService ClientCrudService = new HibernateClientCrudService();
 
-            System.out.println("Updating. Enter client Id:");
+            System.out.println("Deleting. Enter client Id:");
             String sid = fsm.getScanner().nextLine();
             long id = Long.parseLong(sid);
 
@@ -24,8 +24,7 @@ public class updateClientCrud extends CliState {
 
             if (client != null) {
                 System.out.println("Client " + client.getName() + " found. Processing...");
-                ClientCrudService.update(id);
-                System.out.println("Client new name is " + ClientCrudService.getById(id).getName() + ".");
+                ClientCrudService.delete(id);
             } else {
                 System.out.println("Client with id " + id + " not found:");
             }

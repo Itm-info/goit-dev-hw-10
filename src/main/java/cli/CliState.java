@@ -14,7 +14,7 @@ public class CliState {
     public void readClientCrudService() { }
     public void readByNameClientCrudService() { }
     public void updateClientCrudService() { }
-//    public void deleteClientCrudService() { }
+    public void deleteClientCrudService() { }
 //    public void createPlanetCrudService() { }
 //    public void readPlanetCrudService() { }
 //    public void updatePlanetCrudService() { }

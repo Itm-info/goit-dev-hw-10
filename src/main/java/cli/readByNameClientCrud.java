@@ -16,7 +16,7 @@ public class readByNameClientCrud extends CliState {
         try {
             IClientCrudService ClientCrudService = new HibernateClientCrudService();
 
-            System.out.println("Enter client name:");
+            System.out.println("Reading. Enter client name:");
             String name = fsm.getScanner().nextLine();
 
             Client client = ClientCrudService.getByName(name);
