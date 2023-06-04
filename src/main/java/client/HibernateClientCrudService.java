@@ -16,7 +16,6 @@ public class HibernateClientCrudService implements IClientCrudService {
         transaction.commit();
         session.close();
     }
-
     @Override
     public Client getById(long id) throws SQLException {
         try (Session session = HibernateUtil.getInstance().getSessionFactory().openSession()) {
@@ -28,7 +27,6 @@ public class HibernateClientCrudService implements IClientCrudService {
             return query.stream().findFirst().orElse(null);
         }
     }
-
     @Override
     public Client getByName(String name) throws SQLException {
         try (Session session = HibernateUtil.getInstance().getSessionFactory().openSession()) {
@@ -38,6 +36,17 @@ public class HibernateClientCrudService implements IClientCrudService {
             );
             query.setParameter("name", name);
             return query.stream().findFirst().orElse(null);
+        }
+    }
+    @Override
+    public void update(long id) throws SQLException {
+        try (Session session = HibernateUtil.getInstance().getSessionFactory().openSession()) {
+            Transaction transaction = session.beginTransaction();
+                Client existing = session.get(Client.class, id);
+                existing.setName("Agent Smith");
+                session.persist(existing);
+            transaction.commit();
+            session.close();
         }
     }
 }

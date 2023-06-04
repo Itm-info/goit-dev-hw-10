@@ -21,11 +21,10 @@ public class IdleState extends CliState {
     public void readByNameClientCrudService() {
         fsm.setState(new readByNameClientCrud(fsm));
     }
-
-//    @Override
-//    public void updateClientCrudService() {
-//        fsm.setState(new updateClientCrud(fsm));
-//    }
+    @Override
+    public void updateClientCrudService() {
+        fsm.setState(new updateClientCrud(fsm));
+    }
 //    @Override
 //    public void deleteClientCrudService() {
 //        fsm.setState(new deleteClientCrud(fsm));

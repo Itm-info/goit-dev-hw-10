@@ -41,9 +41,9 @@ public class CliFSM {
                 case "rcn":
                     readByNameClientCrudService();
                     break;
-//                case "updateClient":
-//                    updateClientCrudService();
-//                    break;
+                case "uc":
+                    updateClientCrudService();
+                    break;
 //                case "deleteClient":
 //                    deleteClientCrudService();
 //                    break;
@@ -70,10 +70,9 @@ public class CliFSM {
     }
     public void readClientCrudService() { state.readClientCrudService(); }
     public void readByNameClientCrudService() { state.readByNameClientCrudService(); }
-
-//    public void updateClientCrudService() {
-//        state.updateClientCrudService();
-//    }
+    public void updateClientCrudService() {
+        state.updateClientCrudService();
+    }
 //    public void deleteClientCrudService() {
 //        state.deleteClientCrudService();
 //    }
