@@ -47,18 +47,18 @@ public class CliFSM {
                 case "dc":
                     deleteClientCrudService();
                     break;
-//                case "createPlanet":
-//                    createPlanetCrudService();
-//                    break;
-//                case "readPlanet":
-//                    readPlanetCrudService();
-//                    break;
-//                case "updatePlanet":
-//                    updatePlanetCrudService();
-//                    break;
-//                case "deletePlanet":
-//                    deletePlanetCrudService();
-//                    break;
+                case "cp":
+                    createPlanetCrudService();
+                    break;
+                case "rp":
+                    readPlanetCrudService();
+                    break;
+                case "up":
+                    updatePlanetCrudService();
+                    break;
+                case "dp":
+                    deletePlanetCrudService();
+                    break;
                 default:
                     unknownCommand(command);
             }
@@ -72,22 +72,13 @@ public class CliFSM {
     public void readByNameClientCrudService() { state.readByNameClientCrudService(); }
     public void updateClientCrudService() { state.updateClientCrudService(); }
     public void deleteClientCrudService() { state.deleteClientCrudService(); }
-//    public void createPlanetCrudService() {
-//        state.createPlanetCrudService();
-//    }
-//    public void readPlanetCrudService() {
-//        state.readPlanetCrudService();
-//    }
-//    public void updatePlanetCrudService() {
-//        state.updatePlanetCrudService();
-//    }
-//    public void deletePlanetCrudService() {
-//        state.deletePlanetCrudService();
-//    }
+    public void createPlanetCrudService() { state.createPlanetCrudService(); }
+    public void readPlanetCrudService() { state.readPlanetCrudService(); }
+    public void updatePlanetCrudService() { state.updatePlanetCrudService(); }
+    public void deletePlanetCrudService() { state.deletePlanetCrudService(); }
     public void unknownCommand(String cmd) {
         state.unknownCommand(cmd);
     }
-
     public void setState(CliState state) {
         this.state = state;
 

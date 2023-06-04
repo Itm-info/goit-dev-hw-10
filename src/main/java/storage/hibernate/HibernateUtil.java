@@ -4,7 +4,7 @@ import lombok.Getter;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 import client.Client;
-import planet.planet;
+import planet.Planet;
 import storage.DatabaseInitService;
 
 public class HibernateUtil {
@@ -20,7 +20,7 @@ public class HibernateUtil {
     private HibernateUtil() {
         sessionFactory = new Configuration()
                 .addAnnotatedClass(Client.class)
-                .addAnnotatedClass(planet.class)
+                .addAnnotatedClass(Planet.class)
                 .buildSessionFactory();
     }
 
