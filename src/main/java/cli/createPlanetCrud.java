@@ -5,6 +5,7 @@ import planet.HibernatePlanetCrudService;
 import planet.IPlanetCrudService;
 
 import java.sql.SQLException;
+import java.util.UUID;
 
 public class createPlanetCrud extends CliState {
     public createPlanetCrud(CliFSM fsm) {
@@ -18,9 +19,12 @@ public class createPlanetCrud extends CliState {
 
             Planet planet = new Planet();
 
-            System.out.println("Creation. Enter planet id:");
-            String id = fsm.getScanner().nextLine();
-            planet.setId(id);
+            planet.setId(UUID.randomUUID().toString().replace("-", "").toUpperCase());
+            System.out.println("Creation. Enter planet id is:" + planet.getId());
+
+//            System.out.println("Creation. Enter planet id:");
+//            String id = fsm.getScanner().nextLine();
+//            planet.setId(id);
 
             System.out.println("Creation. Enter planet name:");
             String name = fsm.getScanner().nextLine();
